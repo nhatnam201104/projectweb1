@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cf561f1c21.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" media="all">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/base.css">
+
+    <title>Cart</title>
+</head>
+
+<body onload="checkLogin();checkEmtyCart()">
+
+    <div class="wrapper">
+        <!-- header -->
+        <div class="container">
+            <header class="header">
+                <!-- header top -->
+
+                <div class="header__top">
+                    <div class="header__container">
+
+                        <div class="header__top-logo">
+                            <img src="img/logo.jpg" alt="logo">
+                        </div>
+                        <div class="header__top-center">
+                            <form id="search" action="/search">
+                                <div class="searchbox__main">
+                                    <button id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    <input type="text" id="searchbox">
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="header__top-action">
+                            <button class="btn" id="btn-login" onclick="loginToggle()">Đăng nhập</button>
+                            <button class="btn" id="btn-register" onclick="resignToggle()">Đăng kí</button>
+                        </div>
+
+                        <div class="header__top-shop" style="width: 0;">
+                            <div class="header__top-shop-wrapper shop__list-no_cart">
+                                <!-- <i class="fa-solid fa-basket-shopping shop-icon"></i>
+                                <div class="notice-wrapper">
+                                    <span class="header__top-shop-notice">0</span>
+                                </div> -->
+                                <!--if no product add class shop__list-no_cart -->
+                                <!-- <div class="shop__list ">
+                                    <img src="img/empty-cart.webp" alt="" class="shop__list-no_cart-img">
+                                    <ul class="show-product-cart">
+                                        
+                                    </ul>
+                                </div> -->
+
+                                <!-- <div class="triangle">
+                                    
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end header-top -->
+
+                <!-- header__bottom -->
+                <div class="header__bottom">
+                    <div class="header__container">
+
+                        <div class="info">
+                            <i class="fa-solid fa-bars"></i>
+                            <span>DANH MỤC SẢN PHẨM</span>
+                        </div>
+                        <div class="menu-holder">
+                            <!-- menu san pham -->
+                            <ul class="main-menu">
+                                <li class="item">
+                                    <img src="./img/lap.png" alt="">
+                                    <span>Laptop HP</span>
+                                </li>
+                                <li class="item">
+                                    <img src="./img/lap.png" alt="">
+                                    <span>Laptop MSI</span>
+                                </li>
+
+                                <li class="item">
+
+                                    <img src="./img/lap.png" alt="">
+                                    <span>Laptop ASUS</span>
+
+                                </li>
+                                <li class="item">
+                                    <img src="./img/lap.png" alt="">
+                                    <span>Laptop LENOVO</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- end header-bottom -->
+                    </div>
+            </header>
+        </div>
+        <!-- end header -->
+        <div class="container">
+            <div class="wrapper-cart">
+                <div class="content-cart">
+                    <div class="contener-cart">
+                        <div class="header-cart">
+                            <div class="icon-cart">
+                                <!-- <h1>Giỏ Hàng</h1> -->
+                                <h1>Giỏ hàng</h1>
+                            </div>
+                            <div class="icon-process">
+                                <h1>Tra cứu</h1>
+                            </div>
+
+                        </div>
+                        <div class="body-cart">
+                            <div class="table-cart" style="display: block;">
+                                <table>
+
+
+                                </table>
+                            </div>
+                            <div class="emty-cart" style="display: none;">
+                                Không có sản phẩm nào trong giỏ hàng!
+                            </div>
+                            <div class="bill-process" style="display: none;">
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="footer-table-cart">
+                            <div class="shipcode">
+                                <span class="left-footer-table-cart">
+                                    <p style="font-size: 20px;">Phí vận chuyển:</p>
+                                    <br>
+                                    <p style="font-size: 30px;">Tổng tiền:</p>
+                                    <!-- <br>
+                                <p style="font-size: 26px;">Trạng thái:</p> -->
+                                </span>
+                                <span class="right-footer-table-cart">
+                                    <p style="font-size: 20px;">Miễn Phí</p>
+                                    <br>
+                                    <p style="font-size: 33px;color:rgb(176, 57, 57);"><span
+                                            class="total-cart">0</span>đ</p>
+                                    <!-- <br>
+                                <p style="font-size: 27px; color: red ; font-weight: bold;">Đang chờ xử lí</p> -->
+                                </span>
+                            </div>
+                            <div class="close-oder">
+                                <button type="button">Đặt hàng ngay</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer">
+
+                <div class="policy-page">
+                    <div class="shop-policy">
+                        <div class="icon">
+                            <img width="40" height="40" src="./footerItem/pic1.jpg" alt="img">
+                        </div>
+                        <div class="text">
+                            <h5>CHÍNH SÁCH GIAO HÀNG</h5>
+                            <p>Nhận và thanh toán tại nhà</p>
+                        </div>
+                    </div>
+                    <div class="shop-policy">
+                        <div class="icon">
+                            <img width="40" height="40" src="./footerItem/pic2.jpg" alt="img">
+                        </div>
+                        <div class="text">
+                            <h5>ĐỔI TRẢ DỄ DÀNG</h5>
+                            <p>1 đổi 1 trong 7 ngày</p>
+                        </div>
+                    </div>
+                    <div class="shop-policy">
+                        <div class="icon">
+                            <img width="40" height="40" src="./footerItem/pic3.jpg" alt="img">
+                        </div>
+                        <div class="text">
+                            <h5>THANH TOÁN TIỆN LỢI</h5>
+                            <p>Tiền mặt, chuyển khoản, trả góp 0%</p>
+                        </div>
+                    </div>
+                    <div class="shop-policy">
+                        <div class="icon">
+                            <img width="40" height="40" src="./footerItem/pic4.jpg" alt="img">
+                        </div>
+                        <div class="text">
+                            <h5>HỖ TRỢ NHIỆT TÌNH</h5>
+                            <p>Tư vấn, giải đáp thắc mắc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo">
+                    <img src="img/logo1.png" alt="">
+                    <p>Địa chỉ: 273 An Dương Vương phường 3, quận 5</p>
+
+                
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+        </div>
+    </div>
+
+    <div class="form-register">
+        <div class="close" onclick="resignToggle()">&times;</div>
+        <form action="" class="register">
+
+            <h1>Đăng Ký</h1>
+
+            <div class="form-group">
+                <input type="text" name="username" id="username" placeholder="Username">
+                <i class="fa-solid fa-user"></i>
+                <span class="mess"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" id="email-register" placeholder="Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="mess"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" id="password-register" placeholder="Password">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mess"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="re-password" id="re-password" placeholder="Comfilm password">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mess"></span>
+            </div>
+
+            <button type="submit" class="submit-register">Đăng Ký</button>
+        </form>
+    </div>
+
+    <div class="form-login">
+        <div class="close" onclick="loginToggle()">&times;</div>
+        <form action="" class="login">
+            <h1>Đăng Nhập</h1>
+            <div class="form-group">
+                <input type="email" name="email" id="email-login" placeholder="Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="mess"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" id="password-login" placeholder="Password">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mess"></span>
+            </div>
+
+
+
+            <button type="submit" class="submit-login">Đăng Nhập</button>
+        </form>
+    </div>
+    <script src="js/cart.js"></script>
+    <script src="js/clickMenu.js"></script>
+    <script src="js/searchbox.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/formLogin.js"></script>
+    <script src="js/formRegister.js"></script>
+</body>
+
+</html>

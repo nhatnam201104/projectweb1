@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/thongke.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" media="all">
+</head>
+<body onload="getBill()">
+    <div class="wrapper">
+        <div class="header">
+            <nav>
+                <div class="logo">
+                    <img src="img/logo1.png" alt="">
+                </div>
+                <div class="account">
+                    <h4>Tài khoản: <span>admin</span></h4>
+                    <button class="log-out">Đăng xuất</button>
+                </div>
+                <div class="icon-menu">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </nav>
+        </div>
+        <ul class="main-menu">
+            <li>
+                <span>Quản lí</span>
+                
+            </li>
+            
+            <li>
+                <span>Số liệu</span>
+            </li>
+
+            <li>
+                <span>Biểu đồ</span>
+            </li>
+        </ul>
+
+        <form action="" class="option">
+            <select name="" id="thangOption">
+                <option value="0">Chọn năm</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+            </select>
+        </form>
+        <div class="management" style="margin: 30px auto;" >
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Doanh số bán hàng</th>
+                    </tr>
+                    <tr>
+                        <th>Tháng</th>
+                        <th>Tổng tiền</th>   
+                    </tr>
+                </thead>
+                <tbody>
+              
+                </tbody>
+                <tfoot>
+                    <tr >
+                        
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="chart" style="display: none;">
+            <div class="column__chart">
+                <!-- <div class="thang thang1"></div>
+                <div class="thang thang2"></div>
+                <div class="thang thang3"></div>
+                <div class="thang thang4"></div>
+                <div class="thang thang5"></div>
+                <div class="thang thang6"></div>
+                <div class="thang thang7"></div>
+                <div class="thang thang8"></div>
+                <div class="thang thang9"></div>
+                <div class="thang thang10"></div>
+                <div class="thang thang11"></div>
+                <div class="thang thang12"></div> -->
+            </div>
+            <div class="month__label">
+                <div class="labelThang">Thang 1</div>
+                <div class="labelThang">Thang 2</div>
+                <div class="labelThang">Thang 3</div>
+                <div class="labelThang">Thang 4</div>
+                <div class="labelThang">Thang 5</div>
+                <div class="labelThang">Thang 6</div>
+                <div class="labelThang">Thang 7</div>
+                <div class="labelThang">Thang 8</div>
+                <div class="labelThang">Thang 9</div>
+                <div class="labelThang">Thang 10</div>
+                <div class="labelThang">Thang 11</div>
+                <div class="labelThang">Thang 12</div>
+            </div>
+        </div>
+    </div>
+
+   <script src="js/thongke.js"></script>
+</body>
+</html>

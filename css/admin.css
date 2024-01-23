@@ -1,0 +1,686 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+ul
+{
+    list-style: none;
+}
+
+body
+{
+    background-color: rgb(236, 240, 241);
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* height: 100000px; */
+}
+
+.wrapper
+{
+    width: 100%;
+}
+
+.header
+{
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    top: 0;
+    position: sticky;
+    z-index: 5;
+}
+
+.header nav
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header .logo
+{
+    width: 5%;
+}
+
+.header .logo img
+{
+    width: 100%;
+    height: auto;
+}
+
+.header .account
+{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.header .account h4
+{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+/* .header .account h4 span:hover
+{
+    text-decoration: underline;
+    color: rgba(52, 152, 219,1.0);
+} */
+
+.header .account .log-out
+{
+    width: 15%;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.header .account .log-out:hover
+{
+    scale: 1.1;
+    color: rgba(52, 152, 219,1.0);
+}
+
+.header .icon-menu
+{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.main-menu
+{
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    right: 0px;
+    top: 40px;
+    text-align: center;
+    transition: 0.5s ease;
+    border-radius: 0 0 20px 20px;
+    visibility: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-menu li
+{
+    /* border-bottom: 1px solid #333; */
+    padding: 20px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.main-menu li i
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+}
+
+.main-menu li::after
+{
+    content: "";
+    position: absolute;
+    width: 0%;
+    border-bottom: 2px solid red;
+    bottom: -1px;
+    left: 0;
+    transition: 0.5s ease;
+}
+
+.main-menu > li:hover>span,
+.main-menu > li:hover>i
+{
+    color: rgba(41, 128, 185,1.0);
+}
+
+.main-menu > li:hover::after {
+    width: 100%;
+}
+
+.main-menu li:hover>.sub-menu
+{
+    display: block;
+}
+
+.main-menu li .sub-menu
+{
+    width: 100%;
+    position: absolute;
+    background-color: rgba(127, 140, 141,1.0);
+    color: #fff;
+    border-radius: 0 0 20px 20px;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+.main-menu li .sub-menu li
+{
+    padding: 20px 20px;
+    border-bottom: 1px solid;
+}
+
+.main-menu li .sub-menu li:last-child
+{
+    border: none;
+}
+
+.main-menu li .sub-menu li:hover
+{
+    color: gold;
+}
+
+.management
+{
+    width: 90%;
+    /* height: 100px; */
+    margin: 100px auto;
+    /* position: relative; */
+}
+
+.management table
+{
+    width: 100%;
+}
+
+.management table,th,td
+{
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+.management th
+{
+    width: 18%;
+}
+
+.management td
+{
+    text-transform: none;
+    text-align: center;
+    font-size: 17px;
+}
+
+.management td img
+{
+    width:70%;
+    height: auto;
+}
+
+.management tbody td button
+{
+    width: 80%;
+    height: 30px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgba(214, 48, 49,1.0);
+    color: #fff;
+    transition: 0.3s ease;
+    padding: 5px 10px;
+}
+
+.management td .green
+{
+    background-color: #186F65;
+}
+
+.management td button:hover
+{
+    scale: 1.1;
+    color: rgba(9, 132, 227,1.0);
+}
+
+.management tfoot .page button
+{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(116, 185, 255,1.0);
+    margin: 0 5px;
+}
+
+.notification-approve
+{
+    position: fixed;
+    top: -100%;
+    /* top:0; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    visibility: hidden;
+}
+
+.notification-approve .info
+{
+    width: 50%;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    z-index: 10;
+    font-size: 25px;
+}
+
+.notification-approve .info h1
+{
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+/* .notification-approve .info h3
+{
+    width: 100%;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.notification-approve .info h3 span
+{
+    text-transform: none;
+    font-weight: normal;
+} */
+
+.notification-approve .info div
+{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.notification-approve .info div span
+{
+    font-size: 18px;
+}
+
+.notification-approve .cancel i
+{
+    position: absolute;
+    font-size: 30px;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+}
+
+.notification-approve .approve
+{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.notification-approve .approve .status
+{
+    width: 80px;
+    height: 40px;
+    margin-left: 20px;
+    border: 1px solid;
+    outline: none;
+    border-radius: 30px;
+    background-color: rgba(99, 110, 114,1.0);
+    transition: 0.8s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-approve .approve .status .circle
+{
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.7s ease;
+}
+
+.notification-approve .approve .status.agree
+{
+    background-color: yellow;
+}
+
+.notification-approve .approve .status.agree .circle
+{
+    left: 50%;
+}
+
+.notification-remove
+{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: -100%;
+    /* top: 0; */
+    left: 0;
+    /* display: none; */
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.notification-remove .notification
+{
+    width: 600px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-remove .notification .title
+{
+    margin: 30px 0;
+}
+
+.notification-remove .notification .button
+{
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-remove .notification .button button
+{
+    margin: 0 20px;
+    width: 30%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 23px;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s ease;
+}
+
+.notification-remove .notification .button button:nth-child(1)
+{
+    background-color: rgba(232, 65, 24,1.0);
+}
+
+.notification-remove .notification .button button:nth-child(2)
+{
+    background-color: rgba(0, 168, 255,1.0);
+}
+
+.notification-remove .notification .button button:hover
+{
+    scale: 1.1;
+    text-transform: uppercase;
+}
+
+.add-product-new
+{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px 20px;
+    /* border-radius: 30px; */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    /* display: none; */
+    position: fixed;
+    z-index: 5;
+    top: -100%;
+    left: 0;
+    visibility: hidden;
+
+    transition: 0.5s ease;
+}
+
+.add-product-new .title
+{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.add-product-new .title .remove
+{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.add-product-new .info
+{
+    width: 100%;
+}
+
+.add-product-new .info form
+{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-product-new .info form .form-group
+{
+    width: 60%;
+    margin: 10px 0;
+}
+
+.add-product-new .info form .form-group input,textarea,select
+{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    resize: none;
+    font-size: 18px;
+}
+
+.add-product-new .info form .form-group textarea
+{
+    height: 100px;
+}
+
+.add-product-new .info form .form-group textarea:focus,
+.add-product-new .info form .form-group input:focus,
+.add-product-new .info form .form-group select:focus
+{
+    border: 1px solid rgba(39, 174, 96,1.0);
+}
+
+.add-product-new .info form button
+{
+    margin-top: 20px;
+    width: 30%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    background-color: rgba(52, 152, 219,1.0);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-product-new .info form button:hover
+{
+    scale: 1.1;
+    background-color: #fff;
+    border: 1px solid rgba(52, 152, 219,1.0);
+    color: rgba(52, 152, 219,1.0);
+}
+
+.add-product-new .info form .form-group.error input,
+.add-product-new .info form .form-group.error select,
+.add-product-new .info form .form-group.error textarea
+{
+    border: 2px solid red;
+}
+
+
+
+/* repair css */
+.repair 
+{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    visibility: hidden;
+    transition: .5s ease;
+}
+
+.repair  .modal__overlay
+{
+    margin-top: 70px;
+    width: 700px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    
+}
+
+.repair  .modal__overlay .title
+{
+    margin-top: 30px;   
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.repair .modal__overlay .remove
+{
+    font-size: 40px;
+    position: absolute;
+    right: 5px;
+    top: -10px;
+    cursor: pointer;
+}
+
+.repair  .modal__overlay .img
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.repair  .modal__overlay .img img
+{
+    width: 40%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.repair .modal__overlay .info
+{
+    width: 100%;
+    ;
+}
+
+.repair .modal__overlay .info form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.repair .modal__overlay .info form .form__group
+{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.repair .modal__overlay .info form .form__group label
+{
+    font-size: 20px;
+}
+
+.repair .modal__overlay .info form .form__group input
+{
+    width: 60%;
+    outline: none;
+    /* border: none; */
+    border: 2px solid #333;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+
+.repair .modal__overlay .info form button
+{
+    margin-top: 20px;
+    width: 30%;
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #00a8ff;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+input::file-selector-button {
+    display: none;
+}
+.repair .modal__overlay .info form button:hover
+{
+    background-color: #fff;
+    color: #00a8ff;
+    border: 2px solid #00a8ff;
+}
+.repair .modal__overlay .info form .form__group.error input {
+    border: 2px solid red;
+}

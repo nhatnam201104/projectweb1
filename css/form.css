@@ -1,0 +1,163 @@
+/* set 2 form có kích thước bằng nhau và có chiều dọc xuống */
+.form-login,
+.form-register {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000000;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    transition: .5s;
+    opacity: 0;
+
+
+}
+.form-login {
+    height: 430px;
+
+}
+.form-register {
+    height: 600px;  
+}
+
+.form-login h1,
+.form-register h1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.close {
+    text-align: right;
+    padding: 10px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-login form,
+.form-register form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 500px;
+}
+
+/* set form */
+form h1 {
+    margin-bottom: 20px;
+}
+
+form .form-group {
+    margin-bottom: 40px;
+    width: 80%;
+    position: relative;
+}
+
+form .form-group input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: rgb(236, 240, 241);
+    padding: 25px;
+    border-radius: 20px;
+    color: black;
+    font-size: 17px;
+}
+
+form .form-group input:focus {
+    border: 1px solid rgb(46, 204, 113);
+}
+
+form .form-group input::placeholder {
+    font-size: 15px;
+}
+
+form .form-group i {
+    font-size: 18px;
+    position: absolute;
+    top: 17px;
+    right: 5%;
+}
+
+form .form-group .fa-solid.fa-eye,
+.fa-solid.fa-eye-slash {
+    cursor: pointer;
+}
+
+.form-login .forgot-password {
+    display: block;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    transition: 0.1s;
+}
+
+.form-login .forgot-password:hover {
+    text-decoration: underline;
+    color: rgb(52, 152, 219);
+}
+
+.form-group .mess {
+    display: block;
+    height: 20px;
+    color: rgb(231, 76, 60);
+    font-size: 17px;
+    padding: 0px 15px;
+}
+
+.form-login button,
+.form-register button,
+.form-logout button {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 50%;
+    height: 40px;
+    background-color: rgb(155, 89, 182);
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    /* transition: 0.1s  ;    */
+}
+
+form button:hover {
+    opacity: 0.8;
+    scale: 1.1;
+}
+
+form .form-group.error input {
+    border: 1px solid rgb(231, 76, 60);
+}
+
+.form-login.active,
+.form-register.active {
+    top: 50%;
+    visibility: visible;
+    transition: .5s;
+    opacity: 1;
+
+}
+
+.wrapper.active {
+    filter: blur(20px);
+    transition: .5s;
+    pointer-events: none;
+}
+
+
+@media (max-width:600px) {
+  .form-register , .form-login  {
+    width: 100%;
+  }
+ 
+  .form-login form, .form-register form {
+    width: 98%;
+  }
+}

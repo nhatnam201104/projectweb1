@@ -1,0 +1,111 @@
+:root {
+    --while-color: #fff;
+    --black-color: #000;
+    --font-color: #333;
+    --header-color:#fff;
+    --top_main-color :#f3cfcf  ;
+    --bottom_main-color:#A28F70;
+    --footer-color:#fdc2c2;
+
+}   
+* {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+html {
+    line-height: 16px;
+    font-family: 'Noto Sans', sans-serif;
+    box-sizing: border-box;
+}
+.grid {
+    min-width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width {
+    width: 100%;
+}
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b {
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+}

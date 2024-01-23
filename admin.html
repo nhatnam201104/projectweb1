@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body onload="loadSanPham()">
+    <div class="wrapper">
+        <div class="header">
+            <nav>
+                <div class="logo">
+                    <img src="img/logo1.png" alt="">
+                </div>
+                <div class="account">
+                    <h4>Tài khoản: <span>admin</span></h4>
+                    <button class="log-out">Đăng xuất</button>
+                </div>
+                <div class="icon-menu">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="main-menu">
+            <li>
+                <span>Quản lý sản phẩm<i class="fa-solid fa-chevron-down"></i></span>
+                <ul class="sub-menu">
+                    <li>Thêm sản phẩm</li>
+                    <li>Sửa sản phẩm</li>
+                </ul>
+            </li>
+            <li>
+                <span>Quản lý khách hàng</span>
+            </li>
+            <li>
+                <span>Quản lý hóa đơn</span>
+            </li>
+            <li>
+                <span>Thống kê</span>
+            </li>
+        </ul>
+
+        <div class="management">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="6">Danh sách khách hàng</th>
+                    </tr>
+                    <tr>
+                        <th>Mã khách hàng</th>
+                        <th>email</th>
+                        <th>Tên khách hàng</th>
+                        <th>password</th>
+                        <th>Ngày đăng kí</th>
+                        <th>chức năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td>#000000</td>
+                        <td>Laptop Lenovo Thinkpad</td>
+                        <td>Trần Nam</td>
+                        <td><span>12.000.000</span>Đ</td>
+                        <td>29-11-2023</td>
+                        <td>
+                            <button>Duyệt đơn</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+
+            <div class="add-product-new">
+                <div class="title">
+                    <h1>Thêm sản phẩm mới</h1>
+                    <div class="remove">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <form action="">
+                        <div class="form-group">
+                            <select name="" id="brand-product">
+                                <option value="1">MSI</option>
+                                <option value="2">LENOVO</option>
+                                <option value="3">HP</option>
+                                <option value="4">ASUS</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Nhập mã sản phẩm" id="id-product">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Tên sản phẩm" id="name-product">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Giá sản phẩm" id="price-product">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mô tả sản phẩm" id="content-product"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="RAM" id="ram">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="ROM" id="rom">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="CPU" id="cpu">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="VGA" id="vga">
+                        </div>
+                        <div class="form-group">
+                            <input type="file" multiple="multiple" id="file-img">
+                        </div>
+
+                        <button type="submit">Thêm</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="notification-approve">
+            <div class="info">
+                <h1>Thông tin đơn hàng</h1>
+                <!-- <h3 class="id">Mã hóa đơn: <span>#000000</span></h3>
+                <h3 class="buyer">Người đặt hàng: <span>Trần Nam</span></h3>
+                <h3 class="info-of-order">Thông tin đơn hàng: 
+                    <span>Laptop lenovo thinkpad</span>
+                </h3>
+                <h3 class="price">Tổng tiền: 
+                    <span>12.000.000</span>
+                    <span>đ</span>
+                </h3>
+                <h3 class="date-of-order">Ngày đặt hàng: 
+                    <span>29-11-2023</span>
+                </h3> -->
+
+                <div class="id">
+                    <b class="title">Mã hóa đơn: </b>
+                    <span>#000000</span>
+                </div>
+                <div class="info-of-order">
+                    <b class="title">Thông tin đơn hàng: </b>
+                    <span>Laptop lenovo thinkpad</span>
+                </div>
+                <div class="buyer">
+                    <b class="title">Người đặt hàng: </b>
+                    <span>Trần Nam</span>
+                </div>
+                <div class="price">
+                    <b class="title">Giá: </b>
+                    <span><span>12.000.000</span>đ</span>
+                </div>
+                <div class="date-of-order">
+                    <b class="title">Ngày đặt hàng: </b>
+                    <span>2-12-2023</span>
+                </div>
+
+                <div class="cancel">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+
+                <h3 class="approve">Trạng thái:
+                    <!-- <button class="status">
+                        <div class="circle"></div>
+                    </button> -->
+                </h3>
+            </div>
+        </div>
+
+        <div class="notification-remove">
+            <div class="notification">
+                <div class="title">
+                    <h2>Bạn có chắc muốn xóa đi khách hàng này?</h2>
+                </div>
+                <div class="button">
+                    <button>Không</button>
+                    <button>Có</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="repair">
+            <div class="modal__overlay">
+                <div class="title">
+                    <span class="remove">&times</span>
+                    <h1>
+                        Sửa sản phẩm
+                    </h1>
+                </div>
+                <div class="img">
+                    <img src="Lenovo/hinh1.jpg" alt="" id="hinhcu">
+                    <img src="img/imgadd.jpg" alt="" id="hinhnew">
+                </div>
+                <div class="info">
+                    <form action="">
+                        <div class="form__group">
+                            <label for="name-repair">Tên sản phẩm:</label>
+                            <input type="text" id="name-repair" name="name-repair">
+                        </div>
+                        <div class="form__group">
+                            <label for="gia-repair">Giá:</label>
+                            <input type="text" id="gia-repair" name="gia-repair">
+                        </div>
+                        <div class="form__group">
+                            <label for="">Chọn ảnh mới: </label>
+                            <input type="file" id="anh-repair">
+                        </div>
+                        
+                        <button type="submit">Lưu chỉnh sửa </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+.product__wrapper {
+    height: 100px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+}
+
+.block-title {
+    height: 60px;
+    background: #fff;
+    position: relative;
+  
+}
+
+.title__background {
+    height: 60px;
+    background-color: #fff;
+    margin: 20px auto;
+}
+
+.block-title {
+    height: 100%;
+    background-color: red;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.block-title::before {
+    content: "";
+    border-width: 30px;
+    border-color: transparent transparent transparent red;
+    left: 100%;
+    border-style: solid;
+    position: absolute;
+}
+
+
+.img {
+    height: auto;
+    cursor: pointer;
+
+}
+
+.img:first-child {
+    margin-left: 0;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.slick-track .product-item .price {
+    display: flex;
+    justify-content: center;
+    color: red;
+    padding: 10px;
+}
+
+.slick-track .product-item .old-price {
+    color: #ccc;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.slick-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    height: 50px;
+    background-color: rgba(255, 60, 60, 0.6);
+    
+    width: 30px;
+    transition: all 0.4s ease-in-out;
+    /* transform: translate(-40px,-50%); */
+    opacity: 0;
+}
+
+.slick-btn i {
+    padding-top: 8px;
+    color: #fff;
+
+}
+
+.slick_prev {
+    left: -40px;
+    z-index: 1001;
+}
+
+.slick_next {
+
+    right: -40px;
+    z-index: 1001;
+}
+
+.slider-product:hover .slick_prev {
+    transform: translateY(-50%) translateX(40px);
+    /* Di chuyển từ ngoài vào trong */
+}
+
+.slider-product:hover .slick_next {
+    transform: translateY(-50%) translateX(-40px);
+    /* Di chuyển từ ngoài vào trong */
+}
+
+.slider-product:hover .slick-btn {
+    opacity: 1;
+    /* Hiển thị khi hover vào slider container */
+}
+.slick-track .product-item {
+    border-right: 1px solid #ccc;
+    background: #fff;
+    position: relative;
+}
+.slick-track .product-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px 0px;
+}
+.product-icon { 
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.product-icon i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+ 
+    cursor: pointer;
+    transition: 0.5s ease;
+    position: absolute;
+    right: -100px;
+    margin-bottom: 20px;
+
+}
+.tooltip {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding: 5px;
+    position: absolute;
+    z-index: 100;
+  }
+.product-icon .compare
+{
+    top: 10px;
+    transition: 0.3s ease;
+}
+.product-icon .see-fast
+{
+    top: 50px;
+    transition: 0.5s ease;
+}
+.product-icon .cart
+{
+    top: 90px;
+    transition: 0.7s ease;
+}
+.product-icon i:hover
+{
+    transform: rotate(360deg);
+}
+.name-product {
+    text-align: center;
+    font-weight: 500;
+    color: #333;
+    
+}
+.name-product span {
+    transition: 0.1s ease-in-out;
+    
+}
+.name-product :hover {
+    color: #f13e3e;
+    font-size: 16.5px;
+    cursor: pointer;
+
+}
+
+
+@media (min-width: 601px) and (max-width:900px) {
+    
+}

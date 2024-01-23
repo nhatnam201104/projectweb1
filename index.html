@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chu</title>
+    <!-- base css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" media="all">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/content.css">
+</head>
+
+<body onload="addProductOfbrand();checkShow();checkLogin();showCart()">
+    <!-- begin wrapper  -->
+    <div class="wrapper">
+        <div class="container">
+            <header class="header">
+                <!-- header top -->
+
+                <div class="header__top">
+                    <div class="header__container">
+
+                        <div class="header__top-logo">
+                            <img src="img/logo.jpg" alt="logo">
+                        </div>
+                        <div class="header__top-center">
+                            <form id="search" action="/search">
+                                <div class="searchbox__main">
+                                    <button id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    <input type="text" id="searchbox">
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="header__top-action">
+                            <button class="btn" id="btn-login" onclick="loginToggle()">Đăng nhập</button>
+                            <button class="btn" id="btn-register" onclick="resignToggle()">Đăng kí</button>
+                        </div>
+
+                        <div class="header__top-shop">
+                            <div class="header__top-shop-wrapper shop__list-no_cart">
+                                <i class="fa-solid fa-basket-shopping shop-icon"></i>
+                                <div class="notice-wrapper">
+                                    <span class="header__top-shop-notice">0</span>
+                                </div>
+                                <!--if no product add class shop__list-no_cart -->
+                                <div class="shop__list ">
+                                    <img src="img/empty-cart.webp" alt="" class="shop__list-no_cart-img">
+                                    <ul class="show-product-cart">
+                                    </ul>
+                                </div>
+                                <div class="triangle" >
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end header-top -->
+
+                <!-- header__bottom -->
+                <div class="header__bottom">
+                    <div class="header__container">
+
+                        <div class="info">
+                            <i class="fa-solid fa-bars"></i>
+                            <span>DANH MỤC SẢN PHẨM</span>
+                        </div>
+                        <div class="respoint" >
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <div class="menu-holder">
+                            <!-- menu san pham -->
+                            <ul class="main-menu">
+                                <li class="item">
+                                    <img src="./img/lap.png" alt="">
+                                    <span>Laptop HP</span>
+                                </li>
+                                <li class="item">
+                                    <img src="./img/lap.png" alt="">
+                                    <span>Laptop MSI</span>
+                                </li>
+
+                                <li class="item">
+
+                                    <img src="./img/lap.png" alt="">
+                                    <span>Laptop ASUS</span>
+
+                                </li>
+                                <li class="item">
+                                    <img src="./img/lap.png" alt="">
+                                    <span>Laptop LENOVO</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- end header-bottom -->
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- main -->
+        <div class="container" style="display: none;">
+            <div class="main">
+                <div class="banner__wrapper" >
+                    <div class="list-img">
+                        <div class="img-item">
+                            <img src="img/img-product/img1.webp" alt="">
+                        </div>
+                        <div class="img-item">
+
+                            <img src="img/img-product/img2.webp" alt="">
+
+                        </div>
+                        <div class="img-item">
+
+                            <img src="img/img-product/img3.webp" alt="">
+
+                        </div>
+                        <div class="img-item">
+
+                            <img src="img/img-product/img4.webp" alt="">
+
+                        </div>
+                        <div class="img-item">
+
+                            <img src="img/img-product/img5.webp" alt="">
+
+                        </div>
+                        <div class="img-item">
+
+                            <img src="img/img-product/img5.webp" alt="">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="product__wrapper">
+                    <section class="product1">
+                        <div class="container">
+                            <div class="title__background">
+                                <div class="block-title">
+                                    <h1>Laptop ASUS</h1>
+                                </div>
+                            </div>
+                            <div class="slider-product">
+                            </div>
+
+                        </div>
+                    </section>
+                    <section class="product2">
+                        <div class="container">
+                            <div class="title__background">
+                                <div class="block-title">
+                                    <h1>Laptop MSI</h1>
+                                </div>
+                            </div>
+                            <div class="slider-product">
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="product3">
+                        <div class="container">
+                            <div class="title__background">
+                                <div class="block-title">
+                                    <h1>Laptop LENOVO</h1>
+                                </div>
+                            </div>
+                            <div class="slider-product">
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="product4">
+                        <div class="container">
+                            <div class="title__background">
+                                <div class="block-title">
+                                    <h1>Laptop HP</h1>
+                                </div>
+                            </div>
+                            <div class="slider-product">
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- end main -->
+        </div>
+
+
+        <div class="showProduct">
+            <div class="name-and-rate">
+                <div class="name">
+                    <h1></h1>
+                </div>
+                <div class="rate">
+
+                </div>
+
+                <div class="remove" onclick="closeProductInfo()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+
+            <div class="info-product">
+                <div class="img-and-parameter">
+                    <div class="img">
+                        <div class="show-img">
+                            <div>
+                                <img src="Lenovo/hinh1.jpg" alt="">
+                                <img src="slideShow/slideLenovo/sp1/pic1.jpg" alt="">
+                                <img src="slideShow/slideLenovo/sp1/pic2.jpg" alt="">
+                                <img src="slideShow/slideLenovo/sp1/pic3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="button-left" onclick="moveLeft()"><i class="fa-solid fa-angle-left"></i>
+                            </div>
+                            <div class="button-right" onclick="moveRight()"><i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="parameter">
+                        <p><b>Màn hình: </b><span></span></p>
+                        <p><b>CPU: </b><span></span></p>
+                        <p><b>RAM: </b><span></span></p>
+                        <p><b>Ổ cứng: </b><span></span></p>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h1 class="price"><span></span>Đ</h1>
+
+                    <div class="endow">
+                        <h3>
+                            <i class="fa-solid fa-star"></i>
+                            Ưu đãi khi mua laptop
+                        </h3> <br>
+                        <h4>🎁Chuột Galax Slider-04 RGB Gaming | Đen</h4> <br>
+                        <h4>🎁Lót chuột Star Gaming Xám|Đỏ|Xanh</h4>
+                    </div>
+
+                    <p class="describe"><span>Mô tả: </span> <span class="content-describe"></span></p>
+
+                    <div class="add-cart-and-buy-now">
+
+                    </div>
+                </div>
+
+            </div>
+         
+    
+        </div>
+
+        <div class="content">
+
+            <div class="sort">
+                <form action="">
+                    <label for="sort-by-price">Tìm kiếm theo giá: </label>
+                    <input type="search" name="" id="from" placeholder="Giá từ">
+                    <input type="search" name="" id="to" placeholder="Đến">
+                    <button type="submit">Lọc</button>
+                </form>
+            </div>
+
+            <!-- tạo ra trang hiện thị các mặc hàng -->
+            <ul class="products">
+
+            </ul>
+
+            <!-- chia trang -->
+            <div class="divide-page">
+            </div>
+            <div class="container">
+                    <div class="footer">
+
+                        <div class="policy-page">
+                            <div class="shop-policy">
+                                <div class="icon">
+                                    <img width="40" height="40" src="./footerItem/pic1.jpg" alt="img">
+                                </div>
+                                <div class="text">
+                                    <h5>CHÍNH SÁCH GIAO HÀNG</h5>
+                                    <p>Nhận và thanh toán tại nhà</p>
+                                </div>
+                            </div>
+                            <div class="shop-policy">
+                                <div class="icon">
+                                    <img width="40" height="40" src="./footerItem/pic2.jpg" alt="img">
+                                </div>
+                                <div class="text">
+                                    <h5>ĐỔI TRẢ DỄ DÀNG</h5>
+                                    <p>1 đổi 1 trong 7 ngày</p>
+                                </div>
+                            </div>
+                            <div class="shop-policy">
+                                <div class="icon">
+                                    <img width="40" height="40" src="./footerItem/pic3.jpg" alt="img">
+                                </div>
+                                <div class="text">
+                                    <h5>THANH TOÁN TIỆN LỢI</h5>
+                                    <p>Tiền mặt, chuyển khoản, trả góp 0%</p>
+                                </div>
+                            </div>
+                            <div class="shop-policy">
+                                <div class="icon">
+                                    <img width="40" height="40" src="./footerItem/pic4.jpg" alt="img">
+                                </div>
+                                <div class="text">
+                                    <h5>HỖ TRỢ NHIỆT TÌNH</h5>
+                                    <p>Tư vấn, giải đáp thắc mắc</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logo">
+                            <img src="img/logo1.png" alt="">
+                            <p>Địa chỉ: 273 An Dương Vương phường 3, quận 5</p>
+
+                        
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        <div class="container " style="display: none;">
+            <div class="footer">
+                <!-- 3 -->
+                <div class="policy-page">
+                    <div class="shop-policy">
+                        <div class="icon">
+                            <img width="40" height="40" src="./footerItem/pic1.jpg" alt="img">
+                        </div>
+                        <div class="text">
+                            <h5>CHÍNH SÁCH GIAO HÀNG</h5>
+                            <p>Nhận và thanh toán tại nhà</p>
+                        </div>
+                    </div>
+                    <div class="shop-policy">
+                        <div class="icon">
+                            <img width="40" height="40" src="./footerItem/pic2.jpg" alt="img">
+                        </div>
+                        <div class="text">
+                            <h5>ĐỔI TRẢ DỄ DÀNG</h5>
+                            <p>1 đổi 1 trong 7 ngày</p>
+                        </div>
+                    </div>
+                    <div class="shop-policy">
+                        <div class="icon">
+                            <img width="40" height="40" src="./footerItem/pic3.jpg" alt="img">
+                        </div>
+                        <div class="text">
+                            <h5>THANH TOÁN TIỆN LỢI</h5>
+                            <p>Tiền mặt, chuyển khoản, trả góp 0%</p>
+                        </div>
+                    </div>
+                    <div class="shop-policy">
+                        <div class="icon">
+                            <img width="40" height="40" src="./footerItem/pic4.jpg" alt="img">
+                        </div>
+                        <div class="text">
+                            <h5>HỖ TRỢ NHIỆT TÌNH</h5>
+                            <p>Tư vấn, giải đáp thắc mắc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo">
+                    <img src="/img/logo.jpg" alt="">
+                    <p>Địa chỉ: 273 An Dương Vương phường 3, quận 5</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-register">
+        <div class="close" onclick="resignToggle()">&times;</div>
+        <form action="" class="register">
+
+            <h1>Đăng Ký</h1>
+
+            <div class="form-group">
+                <input type="text" name="username" id="username" placeholder="Username">
+                <i class="fa-solid fa-user"></i>
+                <span class="mess"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" id="email-register" placeholder="Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="mess"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" id="password-register" placeholder="Password">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mess"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="re-password" id="re-password" placeholder="Comfilm password">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mess"></span>
+            </div>
+
+            <button type="submit" class="submit-register">Đăng Ký</button>
+        </form>
+    </div>
+
+    <div class="form-login">
+        <div class="close" onclick="loginToggle()">&times;</div>
+        <form action="" class="login">
+            <h1>Đăng Nhập</h1>
+            <div class="form-group">
+                <input type="email" name="email" id="email-login" placeholder="Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="mess"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" id="password-login" placeholder="Password">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mess"></span>
+            </div>
+
+
+
+            <button type="submit" class="submit-login">Đăng Nhập</button>
+        </form>
+
+
+
+    </div>
+    <script src="js/productArray.js"></script>
+    <script src="js/themSanPhamVaoTrang.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/slick.js"></script>
+</body>
+<script src="js/main.js"></script>
+<script src="./js/form.js"></script>
+<script src="./js/formLogin.js"></script>
+<script src="./js/formRegister.js"></script>
+<script src="./js/clickMenu.js"></script>
+<script src="./js/searchbox.js  "></script>
+<script src="./js/addToCart.js"></script>
+
+</html

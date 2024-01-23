@@ -1,0 +1,49 @@
+.option {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+ 
+}
+.option #thangOption {
+    width: 10%;
+    margin: 15px;
+    padding: 0 20px;
+    text-align: center;
+
+}
+.option #thangOption option {
+    text-align: center;
+
+}
+.chart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px auto;
+}
+.chart .column__chart {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    transform: scaleY(-1);
+    height: 500px;
+    margin: 0 auto;
+}
+.chart .column__chart .thang {
+    width: 8%;
+    background: rgb(144, 144, 241);
+}
+.chart .month__label {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 10px auto;
+    
+}
+.chart .month__label .labelThang {
+    width: 8%;
+    text-align: center;
+}
